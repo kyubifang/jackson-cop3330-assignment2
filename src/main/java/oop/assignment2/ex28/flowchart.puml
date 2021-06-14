@@ -1,0 +1,10 @@
+@startuml
+
+repeat :i = 0;
+    :add 1 to i;
+    :Enter a number:;
+        :add number to total;
+repeat while (i < 5?) is (yes)
+->no;
+:print total number.;
+@enduml
