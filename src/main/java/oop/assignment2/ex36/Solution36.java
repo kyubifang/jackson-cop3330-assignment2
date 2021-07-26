@@ -5,9 +5,8 @@
 
 package oop.assignment2.ex36;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.math.BigDecimal;
+import java.util.Arrays;
 
 /*
 Exercise 36 - Computing Statistics
@@ -44,20 +43,25 @@ Challenges
 
  */
 public class Solution36 {
-    mean list = new mean();
-    List<Double> avg = Collections.singletonList(list.average());
-    double maximum = list.max((ArrayList<Double>) avg);
-    double minimum = list.min((ArrayList<Double>) avg);
-    double standardDeviation = list.std();
-    String calc = list.calculations();
+    public static void main(String[] args) {
+        determine list = new determine();
+        int[] num = list.numbers();
+        double avg = list.average(num);
+        int minimum = list.min(num);
+        int maximum = list.max(num);
+        BigDecimal standardDeviation = list.std(num, avg);
 
-
-    String output = generateOutput(calc);
+        String output = generateOutput(num, avg, minimum, maximum, standardDeviation);
 
         System.out.println(output);
-}
-
-    public static String generateOutput(String calc){
-    return calc;
     }
+
+    private static String generateOutput(int[] num, double avg, int minimum, int maximum, BigDecimal standardDeviation) {
+        return "Numbers: " + Arrays.toString(num) +
+                "\nThe average is " + avg +
+                "\nThe minimum is 100" + minimum +
+                "\nThe maximum is 1000" + maximum +
+                "\nThe standard deviation is " + standardDeviation + ".";
+    }
+
 }

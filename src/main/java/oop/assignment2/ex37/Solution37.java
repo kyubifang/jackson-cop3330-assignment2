@@ -4,6 +4,9 @@
  */
 
 package oop.assignment2.ex37;
+
+import java.util.List;
+
 /*
 Exercise 37 - Password Generator
 
@@ -31,5 +34,20 @@ Challenges
 
  */
 public class Solution37 {
+    public static void main(String[] args) {
+        password list = new password();
+        List<String> length = list.minLength();
+        List<String> spec = list.special(length);
+        List<String> num = list.numbers(spec);
+        String join = list.join(num);
+
+        String output = generateOutput(join);
+
+        System.out.println(output);
+    }
+
+    public static String generateOutput(String join){
+        return "Your password is " + join;
+    }
 
 }

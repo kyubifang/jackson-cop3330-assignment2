@@ -27,4 +27,5 @@ Challenge
 
  */
 public class Solution38 {
+
 }
